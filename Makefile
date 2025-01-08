@@ -11,6 +11,7 @@ LOPTS = -L../printf -lftprintf
 all: ${NAME}
 
 $(NAME): $(OBJS)
+	make -C ../printf
 	$(CC) $^ $(LOPTS) -o $@
 
 %.o: %.c Makefile printf_tests.h

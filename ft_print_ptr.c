@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:27:12 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/09 12:38:22 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:20:05 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,5 @@ int	main(void)
 	test_print_ptr(ptr8);
 	void *ptr9;
 	test_print_ptr(ptr9);
-	void *ptr10;
-	test_print_ptr(ptr10);
+	test_print_ptr(NULL);
 }

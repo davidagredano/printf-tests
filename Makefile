@@ -48,4 +48,9 @@ print_ptr: fclean
 	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
 	./$(NAME)
 
-.PHONY: all clean fclean re t
+print_char: fclean
+	make -C ../printf
+	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
+	./$(NAME)
+
+.PHONY: all clean fclean re t print_int print_uint print_hex print_ptr print_char

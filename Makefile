@@ -38,4 +38,9 @@ print_uint: fclean
 	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
 	./$(NAME)
 
+print_hex: fclean
+	make -C ../printf
+	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
+	./$(NAME)
+
 .PHONY: all clean fclean re t

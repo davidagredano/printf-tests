@@ -29,7 +29,13 @@ t: re
 	./$(NAME)
 
 print_int: fclean
-	$(CC) ft_print_int.c $(LOPTS) -o $(NAME)
+	make -C ../printf
+	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
+	./$(NAME)
+
+print_uint: fclean
+	make -C ../printf
+	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
 	./$(NAME)
 
 .PHONY: all clean fclean re t

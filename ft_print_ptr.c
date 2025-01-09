@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:27:12 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/09 16:20:05 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:59:54 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	test_print_ptr(void *ptr)
 {
-	ft_putstr_fd("ft_print_uint: param=", STDOUT_FILENO);
+	ft_putstr_fd("ft_print_ptr: param=", STDOUT_FILENO);
 	ft_putnbr_fd((long) ptr, STDOUT_FILENO); // bug: works with int only
 	ft_putstr_fd(", outputs=", STDOUT_FILENO);
 	int	ret = ft_print_ptr(ptr);

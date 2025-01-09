@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:02:19 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/08 12:25:57 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/09 10:41:49 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 # define PRINTF_TESTS_H
 
 # include "../printf/ft_printf.h"
+
+# include <limits.h>
 
 #endif

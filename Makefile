@@ -28,4 +28,8 @@ re: fclean all
 t: re
 	./$(NAME)
 
+print_int: fclean
+	$(CC) ft_print_int.c $(LOPTS) -o $(NAME)
+	./$(NAME)
+
 .PHONY: all clean fclean re t

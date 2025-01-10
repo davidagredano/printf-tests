@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 09:47:07 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/09 17:03:46 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/10 14:02:37 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,20 @@
 
 void	test_print_char(int c)
 {
-	ft_putstr_fd("ft_print_char: param=", STDOUT_FILENO);
-	ft_putchar_fd(c, STDOUT_FILENO);
-	ft_putstr_fd(", outputs=", STDOUT_FILENO);
-	int	ret = ft_print_char(c);
-	ft_putstr_fd(", returns=", STDOUT_FILENO);
-	ft_putnbr_fd(ret, STDOUT_FILENO);
-	ft_putchar_fd('\n', STDOUT_FILENO);
+	char std[2];
+	//char mine[2];
+
+	int	ret_std = printf("%c", c);
+	sprintf(std, "%c", c);
+	ft_putstr("ft_print_char: expect=");
+	ft_putstr(std);
+	ft_putstr(", mine=");
+	int	ret_mine = ft_print_char(c);
+	ft_putstr(", expect ret=");
+	ft_putnbr_fd(ret_std, STDOUT_FILENO);
+	ft_putstr(", ret mine=");
+	ft_putnbr_fd(ret_mine, STDOUT_FILENO);
+	ft_putstr("\n");
 }
 
 int	main(void)
@@ -29,4 +36,7 @@ int	main(void)
 	test_print_char((int) '\0');
 	test_print_char((int) '6');
 	test_print_char((int) 200);
+	test_print_char((int) '0');
+	test_print_char((int) 0);
+	test_print_char((int) '1');
 }

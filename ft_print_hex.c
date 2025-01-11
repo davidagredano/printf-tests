@@ -5,40 +5,56 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 12:06:32 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/09 17:04:30 by dagredan         ###   ########.fr       */
+/*   Created: 2025/01/09 09:47:07 by dagredan          #+#    #+#             */
+/*   Updated: 2025/01/11 20:37:28 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_tests.h"
 
-void	test_print_hex(unsigned int n, bool upper)
+static void	ft_print_expected_value(const unsigned int n)
 {
-	ft_putstr_fd("ft_print_hex: param=", STDOUT_FILENO);
-	ft_putnbr_fd(n, STDOUT_FILENO); // bug: works with int only
-	ft_putstr_fd(", outputs=", STDOUT_FILENO);
-	int	ret = ft_print_hex(n, upper);
-	ft_putstr_fd(", returns=", STDOUT_FILENO);
-	ft_putnbr_fd(ret, STDOUT_FILENO);
-	ft_putchar_fd('\n', STDOUT_FILENO);
+	int	ret;
+
+	ret = printf("%x", n);
+	printf(" (%d)", ret);
+	printf(" %s// printf (return value)%s\n", GRAY, COLOR_RESET);
+}
+
+static void	ft_print_return_value(const unsigned int n)
+{
+	int	ret;
+
+	ret = ft_printf("%x", n);
+	printf(" (%d)", ret);
+	printf(" %s// ft_printf (return value)%s\n", GRAY, COLOR_RESET);
+}
+
+static void	test_print_hex(const unsigned int n, const char *desc)
+{
+	ft_print_test_desc(desc);
+	ft_print_expected_value(n);
+	ft_print_return_value(n);
 }
 
 int	main(void)
-{	
-	test_print_hex((unsigned int) 1, true);
-	test_print_hex((unsigned int) 1, false);
-	test_print_hex((unsigned int) 123, true);
-	test_print_hex((unsigned int) 123, false);
-	test_print_hex((unsigned int) 392485, true);
-	test_print_hex((unsigned int) 392485, false);
-	test_print_hex((unsigned int) 0, true);
-	test_print_hex((unsigned int) 0, false);
-	test_print_hex((unsigned int) INT_MAX, true);
-	test_print_hex((unsigned int) INT_MAX, false);
-	test_print_hex((unsigned int) INT_MAX + 1, true);
-	test_print_hex((unsigned int) INT_MAX + 1, false);
-	test_print_hex((unsigned int) 3000000000, true);
-	test_print_hex((unsigned int) 3000000000, false);
-	test_print_hex((unsigned int) UINT_MAX, true);
-	test_print_hex((unsigned int) UINT_MAX, false);
+{
+	ft_print_test_header("Unit tests for specifier 'x'");
+	test_print_hex(0, "0");
+	test_print_hex(1, "1");
+	test_print_hex(15, "15");
+	test_print_hex(16, "16");
+	test_print_hex(17, "17");
+	test_print_hex(42, "42");
+	test_print_hex(12345678, "12345678");
+	test_print_hex(-1, "-1");
+	test_print_hex(-16, "-16");
+	test_print_hex(-42, "-42");
+	test_print_hex(-12345678, "-12345678");
+	test_print_hex(INT_MAX, "INT_MAX");
+	test_print_hex(INT_MIN, "INT_MIN");
+	test_print_hex(UINT_MAX, "UINT_MAX");
+	test_print_hex((unsigned int) LONG_MAX, "LONG_MAX");
+	test_print_hex((unsigned int) LONG_MIN, "LONG_MIN");
+	test_print_hex((unsigned int) ULONG_MAX, "ULONG_MAX");
 }

@@ -6,31 +6,53 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 09:47:07 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/09 10:55:42 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/11 15:35:38 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_tests.h"
 
-void	test_print_int(int n)
+static void	ft_print_expected_value(const int n)
 {
-	ft_putstr_fd("ft_print_int: param=", STDOUT_FILENO);
-	ft_putnbr_fd(n, STDOUT_FILENO);
-	ft_putstr_fd(", outputs=", STDOUT_FILENO);
-	int	ret = ft_print_int(n);
-	ft_putstr_fd(", returns=", STDOUT_FILENO);
-	ft_putnbr_fd(ret, STDOUT_FILENO);
-	ft_putchar_fd('\n', STDOUT_FILENO);
+	int	ret;
+
+	ret = printf("%d", n);
+	printf(" (%d)", ret);
+	printf(" %s// printf (return value)%s\n", GRAY, COLOR_RESET);
+}
+
+static void	ft_print_return_value(const int n)
+{
+	int	ret;
+
+	ret = ft_printf("%d", n);
+	printf(" (%d)", ret);
+	printf(" %s// ft_printf (return value)%s\n", GRAY, COLOR_RESET);
+}
+
+static void	test_print_int(const int n, const char *desc)
+{
+	ft_print_test_desc(desc);
+	ft_print_expected_value(n);
+	ft_print_return_value(n);
 }
 
 int	main(void)
-{	
-	test_print_int((int) 1);
-	test_print_int((int) 123);
-	test_print_int((int) 392485);
-	test_print_int((int) 0);
-	test_print_int((int) INT_MAX);
-	//test_print_int((int) INT_MAX + 1);
-	test_print_int((int) INT_MIN);
-	//test_print_int((int) INT_MIN - 1);
+{
+	ft_print_test_header("Unit tests for specifiers 'd' and 'i'");
+	test_print_int(1, "1");
+	test_print_int(16, "16");
+	test_print_int(42, "42");
+	test_print_int(12345678, "12345678");
+	test_print_int(-1, "-1");
+	test_print_int(-16, "-16");
+	test_print_int(-42, "-42");
+	test_print_int(-12345678, "-12345678");
+	test_print_int(0, "0");
+	test_print_int(INT_MAX, "INT_MAX");
+	test_print_int(INT_MIN, "INT_MIN");
+	test_print_int(UINT_MAX, "UINT_MAX");
+	test_print_int((int) LONG_MAX, "LONG_MAX");
+	test_print_int((int) LONG_MIN, "LONG_MIN");
+	test_print_int((int) ULONG_MAX, "ULONG_MAX");
 }

@@ -1,5 +1,7 @@
 SRCS = ft_printf.c
 
+UTILS = utils.c
+
 OBJS = $(SRCS:.c=.o)
 
 NAME = printf_tests
@@ -28,45 +30,42 @@ re: fclean all
 t: re
 	./$(NAME)
 
-print_int: fclean
+d: fclean
 	make -C ../printf
-	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
+	$(CC) ft_print_int.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
-print_uint: fclean
-	make -C ../printf
-	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
-	./$(NAME)
+i: d
 
 print_hex: fclean
 	make -C ../printf
-	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
+	$(CC) ft_$@.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
 print_ptr: fclean
 	make -C ../printf
-	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
+	$(CC) ft_$@.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
 print_char: fclean
 	make -C ../printf
-	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
+	$(CC) ft_$@.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
 print_str: fclean
 	make -C ../printf
-	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
+	$(CC) ft_$@.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
 print_percent: fclean
 	make -C ../printf
-	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
+	$(CC) ft_$@.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
 putstr: fclean
 	make -C ../printf
-	$(CC) ft_$@.c $(LOPTS) -o $(NAME)
+	$(CC) ft_$@.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
-.PHONY: all clean fclean re t print_int print_uint print_hex print_ptr \
+.PHONY: all clean fclean re t d i print_uint print_hex print_ptr \
 	print_char print_str print_percent putstr

@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:00:02 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/12 17:02:05 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/12 21:26:57 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,41 +16,71 @@ void	ft_printf_tests(void)
 {
 	int	ret;
 
-	/* Testing formats */
-	printf("\nTesting formats");
-	printf("\n***************\n");
-	ret = ft_printf("Hello %s!", "World");
-	printf(" | ret=%d\n", ret);
-	ret = ft_printf("My name is %s and I'm %d y.o.", "Alex", 15);
-	printf(" | ret=%d\n", ret);
-	ret = ft_printf("%X and %x are equivalent to %i.", 123, 123, 123);
-	printf(" | ret=%d\n", ret);
-	ret = ft_printf("uint %u don't fit in int: %i.", 3000000000, 3000000000);
-	printf(" | ret=%d\n", ret);
-	ret = ft_printf("%s's first leter is %c.", "David", 'D');
-	printf(" | ret=%d\n", ret);
-	char	*str = "The address of this string is %p.";
-	ret = ft_printf(str, (void *) str);
-	printf(" | ret=%d\n", ret);
-	ret = ft_printf("The %% sign is printed.");
-	printf(" | ret=%d\n", ret);
-	ret = ft_printf("Trying an ilegal specifier: %r.", "Works?");
-	printf(" | ret=%d\n", ret);
-	ret = printf("Trying an ilegal specifier: %r.", "Works?");
-	printf(" | ret=%d\n", ret);
-	ret = ft_printf("'0', 0, '1' ->  [%c] [%c] [%c] ", '0', 0, '1');
-	printf(" | ret=%d\n", ret);
-	ret = printf("'0', 0, '1' ->  [%c] [%c] [%c] ", '0', 0, '1');
-	printf(" | ret=%d\n", ret);
+	ft_print_test_header("Integration tests");
 
-	/* Testing directives - args proportion */
-	printf("\nTesting directives - args proportion");
-	printf("\n************************************\n");
-	ret = ft_printf("Same args than directives %s, %s.", "hello", "bye");
-	printf(" | ret=%d\n", ret);
-	ret = ft_printf("More args than directives %s.", "1", "2");
-	printf(" | ret=%d\n", ret);
-	//ft_printf("More directives than args %s %s\n", "1"); // May segfault
+	ft_print_test_desc("Hello %s!, World");
+	ret = printf("Hello %s!", "World");
+	ft_print_return_value(ret, "printf");
+	ret = ft_printf("Hello %s!", "World");
+	ft_print_return_value(ret, "ft_printf");
+
+	ft_print_test_desc("My name is %s and I'm %d y.o., Alex, 15");
+	ret = printf("My name is %s and I'm %d y.o.", "Alex", 15);
+	ft_print_return_value(ret, "printf");
+	ret = ft_printf("My name is %s and I'm %d y.o.", "Alex", 25);
+	ft_print_return_value(ret, "ft_printf");
+
+	ft_print_test_desc("%X and %x are equivalent to %i, 90000, 90000, 90000");
+	ret = printf("%X and %x are equivalent to %i", 90000, 90000, 90000);
+	ft_print_return_value(ret, "printf");
+	ret = ft_printf("%X and %x are equivalent to %i", 90000, 90000, 90000);
+	ft_print_return_value(ret, "ft_printf");
+
+	ft_print_test_desc("uint %u don't fit in int %i, 3000000000, 3000000000");
+	ret = printf("uint %u don't fit in int %i", 3000000000, 3000000000);
+	ft_print_return_value(ret, "printf");
+	ret = ft_printf("uint %u don't fit in int %i", 3000000000, 3000000000);
+	ft_print_return_value(ret, "ft_printf");
+
+	ft_print_test_desc("%s's first letter is %c, David, D");
+	ret = printf("%s's first letter is %c", "David", 'D');
+	ft_print_return_value(ret, "printf");
+	ret = ft_printf("%s's first letter is %c", "David", 'D');
+	ft_print_return_value(ret, "ft_printf");
+
+	char	*str = "The address of this string is %p";
+	ft_print_test_desc("The address of this string is %p, str");
+	ret = printf(str, str);
+	ft_print_return_value(ret, "printf");
+	ret = ft_printf(str, str);
+	ft_print_return_value(ret, "ft_printf");
+
+	ft_print_test_desc("The %% sign is printed");
+	ret = printf("The %% sign is printed");
+	ft_print_return_value(ret, "printf");
+	ret = ft_printf("The %% sign is printed");
+	ft_print_return_value(ret, "ft_printf");
+
+	ft_print_test_desc("Trying %r with an ilegal specifier, if works");
+	ret = printf("Trying %r with an ilegal specifier", "if works");
+	ft_print_return_value(ret, "printf");
+	ret = ft_printf("Trying %r with an ilegal specifier", "if works");
+	ft_print_return_value(ret, "ft_printf");
+
+	ft_print_test_desc("More args than directives %s, arg1, arg2");
+	ret = printf("More args than directives %s", "arg1", "arg2");
+	ft_print_return_value(ret, "printf");
+	ret = ft_printf("More args than directives %s", "arg1", "arg2");
+	ft_print_return_value(ret, "ft_printf");
+
+	ft_print_test_desc("More directives than args %s%s%s%s%s%s%s%s%s%s%s%s%s");
+	printf("%s// this may cause a SEGV in both func%s\n", GRAY, COLOR_RESET);
+	/*
+	ret = printf("More directives than args %s%s%s%s%s%s%s%s%s%s%s%s%s");
+	ft_print_return_value(ret, "printf");
+	ret = ft_printf("More directives than args %s%s%s%s%s%s%s%s%s%s%s%s%s");
+	ft_print_return_value(ret, "ft_printf");
+	*/
 }
 
 int	main(void)

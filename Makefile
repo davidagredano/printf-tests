@@ -14,7 +14,7 @@ all: ${NAME}
 
 $(NAME): $(OBJS)
 	make -C ../printf
-	$(CC) $^ $(LOPTS) -o $@
+	$(CC) $^ $(UTILS) $(LOPTS) -o $@
 
 %.o: %.c Makefile printf_tests.h
 	$(CC) -c -o $@ $<

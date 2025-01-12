@@ -6,29 +6,43 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 16:23:32 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/09 17:01:25 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/12 15:31:07 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_tests.h"
 
-void	test_print_str(const char *str)
+static void	ft_print_expected_value(char *str)
 {
-	ft_putstr_fd("ft_print_str: param=\"", STDOUT_FILENO);
-	ft_putstr_fd((char *) str, STDOUT_FILENO);
-	ft_putstr_fd("\", outputs=", STDOUT_FILENO);
-	int	ret = ft_print_str(str);
-	ft_putstr_fd(", returns=", STDOUT_FILENO);
-	ft_putnbr_fd(ret, STDOUT_FILENO);
-	ft_putchar_fd('\n', STDOUT_FILENO);
+	int	ret;
+
+	ret = printf("%s", str);
+	printf(" (%d)", ret);
+	printf(" %s// printf (return value)%s\n", GRAY, COLOR_RESET);
+}
+
+static void	ft_print_return_value(void *str)
+{
+	int	ret;
+
+	ret = ft_printf("%s", str);
+	printf(" (%d)", ret);
+	printf(" %s// ft_printf (return value)%s\n", GRAY, COLOR_RESET);
+}
+
+static void	test_print_str(char *str, const char *desc)
+{
+	ft_print_test_desc(desc);
+	ft_print_expected_value(str);
+	ft_print_return_value(str);
 }
 
 int	main(void)
-{	
-	void *ptr1;
-	test_print_str("hello");
-	test_print_str("World");
-	test_print_str("7sd2 92  2u");
-	test_print_str("");
-	test_print_str(NULL);
+{
+	ft_print_test_header("Unit tests for specifier 's'");
+	test_print_str("Hi", "Hi");
+	test_print_str("Hello World", "Hello World");
+	test_print_str("How are you?\nFine, thanks", "How are you?\\nFine, thanks");
+	test_print_str("Legal string\0 Hidden part", "Legal string\\0 Hidden part");
+	test_print_str(NULL, "NULL");
 }

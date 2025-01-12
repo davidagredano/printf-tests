@@ -6,24 +6,39 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 09:47:07 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/09 17:09:13 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:55:08 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf_tests.h"
 
-void	test_print_percent(void)
+static void	ft_print_expected_value(void)
 {
-	ft_putstr_fd("ft_print_percent: param=", STDOUT_FILENO);
-	ft_putchar_fd('%', STDOUT_FILENO);
-	ft_putstr_fd(", outputs=", STDOUT_FILENO);
-	int	ret = ft_print_percent();
-	ft_putstr_fd(", returns=", STDOUT_FILENO);
-	ft_putnbr_fd(ret, STDOUT_FILENO);
-	ft_putchar_fd('\n', STDOUT_FILENO);
+	int	ret;
+
+	ret = printf("%%");
+	printf(" (%d)", ret);
+	printf(" %s// printf (return value)%s\n", GRAY, COLOR_RESET);
+}
+
+static void	ft_print_return_value(void)
+{
+	int	ret;
+
+	ret = ft_printf("%%");
+	printf(" (%d)", ret);
+	printf(" %s// ft_printf (return value)%s\n", GRAY, COLOR_RESET);
+}
+
+static void	test_print_percent(void)
+{
+	ft_print_test_desc("%");
+	ft_print_expected_value();
+	ft_print_return_value();
 }
 
 int	main(void)
-{	
+{
+	ft_print_test_header("Unit tests for specifier '%'");
 	test_print_percent();
 }

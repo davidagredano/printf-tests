@@ -67,9 +67,9 @@ c: fclean
 	$(CC) ft_print_char.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
-print_percent: fclean
+percent: fclean
 	make -C ../printf
-	$(CC) ft_$@.c $(UTILS) $(LOPTS) -o $(NAME)
+	$(CC) ft_print_percent.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
 putstr: fclean
@@ -77,4 +77,4 @@ putstr: fclean
 	$(CC) ft_$@.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
-.PHONY: all clean fclean re t d i u x X p s c print_percent putstr
+.PHONY: all clean fclean re t d i u x X p s c percent putstr

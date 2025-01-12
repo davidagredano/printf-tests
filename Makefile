@@ -47,9 +47,14 @@ x: fclean
 	$(CC) ft_print_hex.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
-print_ptr: fclean
+X: fclean
 	make -C ../printf
-	$(CC) ft_$@.c $(UTILS) $(LOPTS) -o $(NAME)
+	$(CC) ft_print_hex_caps.c $(UTILS) $(LOPTS) -o $(NAME)
+	./$(NAME)
+
+p: fclean
+	make -C ../printf
+	$(CC) ft_print_ptr.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
 print_char: fclean
@@ -72,5 +77,5 @@ putstr: fclean
 	$(CC) ft_$@.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
-.PHONY: all clean fclean re t d i u x print_ptr \
-	print_char print_str print_percent putstr
+.PHONY: all clean fclean re t d i u x X p print_char print_str \
+        print_percent putstr

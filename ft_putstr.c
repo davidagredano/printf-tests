@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 10:00:16 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/10 10:07:36 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/12 16:59:38 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	test_putstr(char *s)
 {
-	int	ret = ft_putstr(s);
+	int	ret;
+
+	ret = ft_putstr(s);
 	printf(" | ret=%d\n", ret);
 }
 

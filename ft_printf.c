@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:00:02 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/11 12:49:50 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/12 17:02:05 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_printf_tests(void)
 	printf(" | ret=%d\n", ret);
 	ret = printf("'0', 0, '1' ->  [%c] [%c] [%c] ", '0', 0, '1');
 	printf(" | ret=%d\n", ret);
-	
+
 	/* Testing directives - args proportion */
 	printf("\nTesting directives - args proportion");
 	printf("\n************************************\n");

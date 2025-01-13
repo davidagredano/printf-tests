@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_tests.h                                     :+:      :+:    :+:   */
+/*   tests.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:02:19 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/12 20:12:46 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:23:32 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_TESTS_H
-# define PRINTF_TESTS_H
+#ifndef TESTS_H
+# define TESTS_H
 
 # define CYAN "\e[36m"
 # define GRAY "\e[1;30m"
@@ -23,8 +23,22 @@
 # include <stdio.h>
 # include <string.h>
 
+// Utils
 void	ft_print_test_header(const char *str);
 void	ft_print_test_desc(const char *str);
 void	ft_print_return_value(int val, const char *function);
+
+// Unit tests
+void	ft_print_c_tests(void);
+void	ft_print_s_tests(void);
+void	ft_print_p_tests(void);
+void	ft_print_di_tests(void);
+void	ft_print_u_tests(void);
+void	ft_print_x_tests(void);
+void	ft_print_X_tests(void);
+void	ft_print_percent_tests(void);
+
+// Integration tests
+void	ft_print_mixed_tests(void);
 
 #endif

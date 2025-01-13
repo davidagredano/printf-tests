@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_int.c                                     :+:      :+:    :+:   */
+/*   ft_print_di_tests.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 09:47:07 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/12 20:11:07 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:57:51 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_tests.h"
+#include "tests.h"
 
-static void	test_print_int(const int n, const char *desc)
+static void	ft_print_di_test(int n, const char *desc)
 {
 	int	ret;
 
@@ -23,22 +23,23 @@ static void	test_print_int(const int n, const char *desc)
 	ft_print_return_value(ret, "ft_printf");
 }
 
-int	main(void)
+void	ft_print_di_tests(void)
 {
 	ft_print_test_header("Unit tests for specifiers 'd' and 'i'");
-	test_print_int(1, "1");
-	test_print_int(16, "16");
-	test_print_int(42, "42");
-	test_print_int(12345678, "12345678");
-	test_print_int(-1, "-1");
-	test_print_int(-16, "-16");
-	test_print_int(-42, "-42");
-	test_print_int(-12345678, "-12345678");
-	test_print_int(0, "0");
-	test_print_int(INT_MAX, "INT_MAX");
-	test_print_int(INT_MIN, "INT_MIN");
-	test_print_int(UINT_MAX, "UINT_MAX");
-	test_print_int((int) LONG_MAX, "LONG_MAX");
-	test_print_int((int) LONG_MIN, "LONG_MIN");
-	test_print_int((int) ULONG_MAX, "ULONG_MAX");
+	ft_print_di_test(1, "1");
+	ft_print_di_test(16, "16");
+	ft_print_di_test(42, "42");
+	ft_print_di_test(12345678, "12345678");
+	ft_print_di_test(-1, "-1");
+	ft_print_di_test(-16, "-16");
+	ft_print_di_test(-42, "-42");
+	ft_print_di_test(-12345678, "-12345678");
+	ft_print_di_test(0, "0");
+	ft_print_di_test(INT_MAX, "INT_MAX");
+	ft_print_di_test(INT_MIN, "INT_MIN");
+	ft_print_di_test(UINT_MAX, "UINT_MAX");
+	ft_print_di_test((int) LONG_MAX, "LONG_MAX");
+	ft_print_di_test((int) LONG_MIN, "LONG_MIN");
+	ft_print_di_test((int) ULONG_MAX, "ULONG_MAX");
+	printf("\n\n");
 }

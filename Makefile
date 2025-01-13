@@ -1,22 +1,22 @@
-SRCS = ft_printf.c
-
-UTILS = utils.c
+SRCS = main.c utils.c ft_print_c_tests.c ft_print_s_tests.c ft_print_p_tests.c \
+       ft_print_di_tests.c ft_print_u_tests.c ft_print_x_tests.c \
+	   ft_print_X_tests.c ft_print_percent_tests.c ft_print_mixed_tests.c
 
 OBJS = $(SRCS:.c=.o)
 
-NAME = printf_tests
+NAME = test
 
 CC = cc
 
-LOPTS = -L../printf -lftprintf
+LIB = -L../printf -lftprintf
 
 all: ${NAME}
 
 $(NAME): $(OBJS)
 	make -C ../printf
-	$(CC) $^ $(UTILS) $(LOPTS) -o $@
+	$(CC) $^ $(LIB) -o $@
 
-%.o: %.c Makefile printf_tests.h
+%.o: %.c Makefile tests.h
 	$(CC) -c -o $@ $<
 
 clean: 
@@ -27,54 +27,9 @@ fclean: clean
 
 re: fclean all
 
-t: re
-	./$(NAME)
-
-d: fclean
-	make -C ../printf
-	$(CC) ft_print_int.c $(UTILS) $(LOPTS) -o $(NAME)
-	./$(NAME)
-
-i: d
-
-u: fclean
-	make -C ../printf
-	$(CC) ft_print_uint.c $(UTILS) $(LOPTS) -o $(NAME)
-	./$(NAME)
-
-x: fclean
-	make -C ../printf
-	$(CC) ft_print_hex.c $(UTILS) $(LOPTS) -o $(NAME)
-	./$(NAME)
-
-X: fclean
-	make -C ../printf
-	$(CC) ft_print_hex_caps.c $(UTILS) $(LOPTS) -o $(NAME)
-	./$(NAME)
-
-p: fclean
-	make -C ../printf
-	$(CC) ft_print_ptr.c $(UTILS) $(LOPTS) -o $(NAME)
-	./$(NAME)
-
-s: fclean
-	make -C ../printf
-	$(CC) ft_print_str.c $(UTILS) $(LOPTS) -o $(NAME)
-	./$(NAME)
-
-c: fclean
-	make -C ../printf
-	$(CC) ft_print_char.c $(UTILS) $(LOPTS) -o $(NAME)
-	./$(NAME)
-
-percent: fclean
-	make -C ../printf
-	$(CC) ft_print_percent.c $(UTILS) $(LOPTS) -o $(NAME)
-	./$(NAME)
-
 putstr: fclean
 	make -C ../printf
 	$(CC) ft_$@.c $(UTILS) $(LOPTS) -o $(NAME)
 	./$(NAME)
 
-.PHONY: all clean fclean re t d i u x X p s c percent putstr
+.PHONY: all clean fclean re putstr

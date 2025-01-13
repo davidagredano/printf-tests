@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_percent.c                                 :+:      :+:    :+:   */
+/*   ft_print_percent_tests.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 09:47:07 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/12 20:19:28 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:58:45 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_tests.h"
+#include "tests.h"
 
-static void	test_print_percent(void)
+static void	ft_print_percent_test(void)
 {
 	int	ret;
 
@@ -23,9 +23,9 @@ static void	test_print_percent(void)
 	ft_print_return_value(ret, "ft_printf");
 }
 
-
-int	main(void)
+void	ft_print_percent_tests(void)
 {
 	ft_print_test_header("Unit tests for specifier '%'");
-	test_print_percent();
+	ft_print_percent_test();
+	printf("\n\n");
 }

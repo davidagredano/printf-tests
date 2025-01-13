@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_print_mixed_tests.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:00:02 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/12 21:26:57 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:59:52 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_tests.h"
+#include "tests.h"
 
-void	ft_printf_tests(void)
+void	ft_print_mixed_tests(void)
 {
-	int	ret;
+	int		ret;
+	char	*str;
 
-	ft_print_test_header("Integration tests");
+	ft_print_test_header("Mixed tests");
 
 	ft_print_test_desc("Hello %s!, World");
 	ret = printf("Hello %s!", "World");
@@ -37,9 +38,9 @@ void	ft_printf_tests(void)
 	ft_print_return_value(ret, "ft_printf");
 
 	ft_print_test_desc("uint %u don't fit in int %i, 3000000000, 3000000000");
-	ret = printf("uint %u don't fit in int %i", 3000000000, 3000000000);
+	ret = printf("uint %u don't fit in int %i", 3000000000U, 3000000000U);
 	ft_print_return_value(ret, "printf");
-	ret = ft_printf("uint %u don't fit in int %i", 3000000000, 3000000000);
+	ret = ft_printf("uint %u don't fit in int %i", 3000000000U, 3000000000U);
 	ft_print_return_value(ret, "ft_printf");
 
 	ft_print_test_desc("%s's first letter is %c, David, D");
@@ -48,7 +49,7 @@ void	ft_printf_tests(void)
 	ret = ft_printf("%s's first letter is %c", "David", 'D');
 	ft_print_return_value(ret, "ft_printf");
 
-	char	*str = "The address of this string is %p";
+	str = "The address of this string is %p";
 	ft_print_test_desc("The address of this string is %p, str");
 	ret = printf(str, str);
 	ft_print_return_value(ret, "printf");
@@ -81,9 +82,6 @@ void	ft_printf_tests(void)
 	ret = ft_printf("More directives than args %s%s%s%s%s%s%s%s%s%s%s%s%s");
 	ft_print_return_value(ret, "ft_printf");
 	*/
-}
 
-int	main(void)
-{
-	ft_printf_tests();
+	printf("\n\n");
 }

@@ -6,11 +6,11 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 15:07:26 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/12 20:11:35 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:55:04 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_tests.h"
+#include "tests.h"
 
 void	ft_print_test_header(const char *str)
 {

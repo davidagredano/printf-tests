@@ -25,7 +25,7 @@ SRCS_BONUS = main_bonus.c utils.c ft_print_c_tests.c ft_print_s_tests.c \
              ft_print_p_tests.c ft_print_di_tests.c ft_print_u_tests.c \
              ft_print_x_tests.c ft_print_X_tests.c ft_print_percent_tests.c \
              ft_print_mixed_tests.c ft_spec_parser.c ft_print_c_bonus_tests.c \
-             ft_print_s_bonus_tests.c
+             ft_print_s_bonus_tests.c ft_print_u_bonus_tests.c
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 

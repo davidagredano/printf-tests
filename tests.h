@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:02:19 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/14 09:02:14 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:21:21 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ void	ft_print_u_tests(void);
 void	ft_print_x_tests(void);
 void	ft_print_X_tests(void);
 void	ft_print_percent_tests(void);
+
+// Unit tests (bonus)
+void	ft_print_c_bonus_tests(void);
 
 // Integration tests
 void	ft_print_mixed_tests(void);

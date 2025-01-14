@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:41:35 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/13 12:48:57 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/14 07:55:37 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	main(int argc, char **argv)
 		ft_print_percent_tests();
 		ft_print_mixed_tests();
 	}
+	else if (strcmp(argv[1], "isvalid") == 0)
+		ft_isvalid_tests();
 	else
 		print_usage_info();
 		return (1);

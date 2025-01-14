@@ -43,6 +43,5 @@ re: fclean all
 
 bonus: $(LIB_MAIN_OBJ_BONUS) $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
-	@touch bonus
 
 .PHONY: all clean fclean re

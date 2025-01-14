@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:02:19 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/14 07:53:15 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/14 09:02:14 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ void	ft_print_percent_tests(void);
 // Integration tests
 void	ft_print_mixed_tests(void);
 void	ft_isvalid_tests(void);
+void	ft_parse_tests(void);
 
 #endif

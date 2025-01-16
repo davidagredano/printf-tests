@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:41:35 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/16 10:30:05 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:59:53 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ int	main(int argc, char **argv)
 		ft_print_c_bonus_tests();
 	else if (strcmp(argv[1], "sb") == 0)
 		ft_print_s_bonus_tests();
+	else if (strcmp(argv[1], "pb") == 0)
+		ft_print_p_bonus_tests();
 	else if (strcmp(argv[1], "ub") == 0)
 		ft_print_u_bonus_tests();
 	else if (strcmp(argv[1], "xb") == 0)
@@ -72,6 +74,7 @@ int	main(int argc, char **argv)
 	{
 		ft_print_c_bonus_tests();
 		ft_print_s_bonus_tests();
+		ft_print_p_bonus_tests();
 		ft_print_u_bonus_tests();
 		ft_print_x_bonus_tests();
 		ft_print_x_caps_bonus_tests();
@@ -88,7 +91,7 @@ void	print_usage_info(void)
 	printf("What test do you want to lauch?\n");
 	printf("%s", GRAY);
 	printf("Mandatory: c, s, p, d, i, u, x, X, %%, mix, m\n");
-	printf("Bonus: cb, sb, ub, xb, Xb, b\n");
+	printf("Bonus: cb, sb, pb, ub, xb, Xb, b\n");
 	printf("%s", COLOR_RESET);
 	printf("For example, try './test b' to launch all tests for bonus part.\n");
 }

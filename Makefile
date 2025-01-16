@@ -3,8 +3,7 @@ LIB_DIR = ../printf/
 LIB = $(LIB_DIR)libftprintf.a
 
 LIB_SRCS = $(addprefix $(LIB_DIR), ft_printf.c ft_print_c.c ft_print_s.c \
-           ft_print_p.c ft_print_di.c ft_print_u.c ft_print_x.c \
-           ft_print_x_caps.c ft_print_percent.c)
+           ft_print_p.c ft_print_di.c ft_print_uint.c ft_print_percent.c)
 
 LIB_OBJS = $(LIB_SRCS:.c=.o)
 
@@ -25,8 +24,9 @@ SRCS_BONUS = main_bonus.c utils.c ft_print_c_tests.c ft_print_s_tests.c \
              ft_print_p_tests.c ft_print_di_tests.c ft_print_u_tests.c \
              ft_print_x_tests.c ft_print_X_tests.c ft_print_percent_tests.c \
              ft_print_mixed_tests.c ft_spec_parser.c ft_print_c_bonus_tests.c \
-             ft_print_s_bonus_tests.c ft_print_u_bonus_tests.c \
-             ft_print_x_bonus_tests.c ft_print_x_caps_bonus_tests.c
+             ft_print_s_bonus_tests.c ft_print_p_bonus_tests.c \
+             ft_print_u_bonus_tests.c ft_print_x_bonus_tests.c \
+			 ft_print_x_caps_bonus_tests.c
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 

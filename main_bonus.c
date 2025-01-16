@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:41:35 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/14 21:49:47 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/16 09:49:20 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int	main(int argc, char **argv)
 		ft_print_s_bonus_tests();
 	else if (strcmp(argv[1], "ub") == 0)
 		ft_print_u_bonus_tests();
+	else if (strcmp(argv[1], "xb") == 0)
+		ft_print_x_bonus_tests();
 	else
 	{
 		print_usage_info();
@@ -76,7 +78,7 @@ void	print_usage_info(void)
 	printf("What test do you want to lauch?\n");
 	printf("%s", GRAY);
 	printf("Mandatory: c, s, p, d, i, u, x, X, %%, mix, all\n");
-	printf("Bonus: cb sb ub\n");
+	printf("Bonus: cb sb ub xb\n");
 	printf("%s", COLOR_RESET);
 	printf("For example, try './test c'.\n");
 }

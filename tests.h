@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:02:19 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/16 10:41:39 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/16 19:43:19 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define TESTS_H
 
 # define CYAN "\e[36m"
-# define GRAY "\e[1;30m"
+# define GRAY "\e[2;37m"
 # define COLOR_RESET "\e[0m"
 
 # include "../printf/ft_printf.h"

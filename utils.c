@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 15:07:26 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/13 12:55:04 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/16 20:16:17 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ void	ft_print_test_desc(const char *str)
 void	ft_print_return_value(int val, const char *function)
 {
 	printf(" (%d)", val);
-	printf(" %s// %s (return value)%s\n", GRAY, function, COLOR_RESET);
+	printf(" %s// %s (ret)%s\n", GRAY, function, COLOR_RESET);
 }

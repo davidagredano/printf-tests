@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:41:35 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/17 09:19:01 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/17 20:02:04 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,8 @@ int	main(int argc, char **argv)
 		ft_print_di_bonus_tests();
 	else if (strcmp(argv[1], "ub") == 0)
 		ft_print_u_bonus_tests();
-	else if (strcmp(argv[1], "xb") == 0)
+	else if (strcmp(argv[1], "xb") == 0 || strcmp(argv[1], "Xb") == 0)
 		ft_print_x_bonus_tests();
-	else if (strcmp(argv[1], "Xb") == 0)
-		ft_print_x_caps_bonus_tests();
 	else if (strcmp(argv[1], "b") == 0)
 	{
 		ft_print_c_bonus_tests();
@@ -80,7 +78,6 @@ int	main(int argc, char **argv)
 		ft_print_di_bonus_tests();
 		ft_print_u_bonus_tests();
 		ft_print_x_bonus_tests();
-		ft_print_x_caps_bonus_tests();
 	}
 	else
 	{

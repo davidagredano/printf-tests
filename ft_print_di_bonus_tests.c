@@ -6,29 +6,14 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 09:47:07 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/17 17:47:24 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/18 16:18:45 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-static void	ft_print_di_bonus_test_value(int n, const char *spec)
-{
-	int		ret;
-
-	printf("%s%s, %d%s\n", CYAN, spec, n, COLOR_RESET);
-	ret = printf(spec, n, n, n, n, n, n);
-	ft_print_return_value(ret, "printf");
-	ret = ft_printf(spec, n, n, n, n, n, n);
-	ft_print_return_value(ret, "ft_printf");
-}
-
-static void	ft_print_di_bonus_test(const char *spec)
-{
-	ft_print_di_bonus_test_value(101010, spec);
-	ft_print_di_bonus_test_value(-10101, spec);
-	ft_print_di_bonus_test_value(0, spec);
-}
+static void	ft_print_di_bonus_test(const char *spec);
+static void	ft_print_di_bonus_test_value(int n, const char *spec);
 
 void	ft_print_di_bonus_tests(void)
 {
@@ -74,4 +59,22 @@ void	ft_print_di_bonus_tests(void)
 	ft_print_di_bonus_test("|%0.0d|%#0.0d|%00.0d|%-0.0d|% 0.0d|%+0.0d|");
 
 	printf("\n\n");
+}
+
+static void	ft_print_di_bonus_test(const char *spec)
+{
+	ft_print_di_bonus_test_value(101010, spec);
+	ft_print_di_bonus_test_value(-10101, spec);
+	ft_print_di_bonus_test_value(0, spec);
+}
+
+static void	ft_print_di_bonus_test_value(int n, const char *spec)
+{
+	int		ret;
+
+	printf("%s%s, %d%s\n", CYAN, spec, n, COLOR_RESET);
+	ret = printf(spec, n, n, n, n, n, n);
+	ft_print_return_value(ret, "printf");
+	ret = ft_printf(spec, n, n, n, n, n, n);
+	ft_print_return_value(ret, "ft_printf");
 }

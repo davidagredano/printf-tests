@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:02:19 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/18 20:55:14 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/20 02:23:11 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_print_return_value(int val, const char *function);
 void	ft_print_c_tests(void);
 void	ft_print_s_tests(void);
 void	ft_print_p_tests(void);
-void	ft_print_di_tests(void);
+void	ft_print_d_tests(void);
 void	ft_print_u_tests(void);
 void	ft_print_x_tests(void);
 void	ft_print_X_tests(void);
@@ -42,7 +42,7 @@ void	ft_print_percent_tests(void);
 void	ft_print_c_bonus_tests(void);
 void	ft_print_s_bonus_tests(void);
 void	ft_print_p_bonus_tests(void);
-void	ft_print_di_bonus_tests(void);
+void	ft_print_d_bonus_tests(void);
 void	ft_print_u_bonus_tests(void);
 void	ft_print_x_bonus_tests(void);
 

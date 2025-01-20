@@ -1,15 +1,15 @@
-LIB_DIR = ../printf/
+LIB_DIR = ../ft_printf/
 
 LIB = $(LIB_DIR)libftprintf.a
 
-LIB_SRCS = $(addprefix $(LIB_DIR), printf.c print_conversions.c)
+LIB_SRCS = $(addprefix $(LIB_DIR), ft_printf.c print_conversions.c)
 
 LIB_OBJS = $(LIB_SRCS:.c=.o)
 
-LIB_SRCS_BONUS = $(addprefix $(LIB_DIR), printf_bonus.c spec_parser_bonus.c \
-                 ft_print_c_bonus.c ft_print_s_bonus.c ft_print_p_bonus.c \
-                 ft_print_d_bonus.c ft_print_u_bonus.c ft_print_x_bonus.c \
-                 utils_bonus.c)
+LIB_SRCS_BONUS = $(addprefix $(LIB_DIR), ft_printf_bonus.c \
+                 spec_parser_bonus.c ft_print_c_bonus.c ft_print_s_bonus.c \
+                 ft_print_p_bonus.c ft_print_d_bonus.c ft_print_u_bonus.c \
+                 ft_print_x_bonus.c utils_bonus.c)
 
 LIB_OBJS_BONUS = $(LIB_SRCS_BONUS:.c=.o)
 

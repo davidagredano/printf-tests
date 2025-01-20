@@ -6,7 +6,7 @@
 /*   By: dagredan <dagredan@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:02:19 by dagredan          #+#    #+#             */
-/*   Updated: 2025/01/20 11:32:46 by dagredan         ###   ########.fr       */
+/*   Updated: 2025/01/20 12:55:07 by dagredan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # define GRAY "\e[2;37m"
 # define COLOR_RESET "\e[0m"
 
-# include "../printf/ft_printf.h"
+# include "../ft_printf/ft_printf.h"
 
 # include <limits.h>
 # include <stdio.h>
